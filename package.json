@@ -4,8 +4,8 @@
   "description": "A bot to remind people if they accidentally post credentials to GitHub",
   "main": "index.js",
   "dependencies": {
-    "dotenv": "^8.2.0",
-    "github-api": "^3.4.0"
+    "@octokit/rest": "^18.1.1",
+    "dotenv": "^8.2.0"
   },
   "devDependencies": {},
   "scripts": {
