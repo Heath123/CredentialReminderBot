@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "dotenv": "^8.2.0",
-    "puppeteer": "^7.0.4"
+    "github-api": "^3.4.0"
   },
   "devDependencies": {},
   "scripts": {
