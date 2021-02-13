@@ -41,7 +41,7 @@ async function commentOnIfNotDone (repoOwner, repo, commitId, commitAuthor) {
 
   alreadyCommented.push(commitId)
   saveJSON()
-  console.log('Commented on', commitId)
+  console.log(`Commented on https://github.com/${repoOwner}/${repo}/commit/${commitId}`, )
 }
 
 async function searchAndComment () {
