@@ -1,4 +1,4 @@
-Hello @${username}, 
+Hello ${username}, 
 It seems like you may have been trying to remove your password or auth token from this repo. If not, just ignore this message.
 
 Sadly, it doesn’t work that way. Git is a version control system, so anyone can see past versions of your repo _including your credentials_! What’s more, people can easily find your password just by searching for commits including the word “password” or “token”!

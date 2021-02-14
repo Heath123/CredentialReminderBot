@@ -22,17 +22,26 @@ const alreadyCommented = JSON.parse(fs.readFileSync('./alreadyCommented.json'))
 const message = fs.readFileSync('message.txt', { encoding: 'utf8' })
 
 async function commentFromItem (item) {
-  await commentOnIfNotDone(item.repository.owner.login, item.repository.name, item.sha, item.commit.author.name)
+  let greeting
+  if (item.author && item.author.login) {
+    // If the commit is by a GitHub user, ping the user in the message
+    greeting = '@' + item.author.login
+  } else {
+    // Otherwise just use the name
+    greeting = item.commit.author.name
+  }
+
+  await commentOnIfNotDone(item.repository.owner.login, item.repository.name, item.sha, greeting)
 }
 
-async function commentOnIfNotDone (repoOwner, repo, commitId, commitAuthor) {
+async function commentOnIfNotDone (repoOwner, repo, commitId, greeting) {
   if (alreadyCommented.includes(commitId)) return
 
   await octokit.repos.createCommitComment({
     owner: repoOwner,
     repo: repo,
     commit_sha: commitId,
-    body: message.replace('${username}', commitAuthor)
+    body: message.replace('${username}', greeting)
   })
 
   // Don't trigger rate limits
