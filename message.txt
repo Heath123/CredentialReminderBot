@@ -3,7 +3,7 @@ It seems like you may have been trying to remove your password or auth token fro
 
 Sadly, it doesn’t work that way. Git is a version control system, so anyone can see past versions of your repo _including your credentials_! What’s more, people can easily find your password just by searching for commits including the word “password” or “token”!
 
-The right thing to do is to change your password or invalidate your token _now_. If this is not possible, see [here](https://stackoverflow.com/questions/872565/remove-sensitive-files-and-their-commits-from-git-history) for info about removing this file from Git history and hope that other bots or people saw it. 
+The right thing to do is to change your password or invalidate your token _now_. If this is not possible, see [here](https://stackoverflow.com/questions/872565/remove-sensitive-files-and-their-commits-from-git-history) for info about removing this file from Git history and hope that no other bots or people saw it. 
 
 Next time be careful not to upload your credentials in the first place, and make sure to remove them more thoroughly. 
 
